@@ -1,1 +1,1 @@
-# nyxo.github.io
+# nyxo.github.io/home
