@@ -166,10 +166,10 @@
     <button onclick="addAmount(500)">₹500</button>
     <button onclick="addAmount(1000)">₹1000</button>
   </div>
-  <input type="number" id="amount" placeholder="Enter amount (₹)" min="1" max="10000" oninput="validateAmount()" />
+  <input type="number" id="amount" placeholder="Enter amount (₹)" min="10" max="10000" oninput="validateAmount()" />
   <div id="amountTip" class="tip-message tip-invalid">
     <span id="amountIcon" class="tip-icon"><i class="fas fa-times-circle"></i></span>
-    <span>Amount must be between ₹1 and ₹10,000.</span>
+    <span>Amount must be between ₹10 and ₹10,000.</span>
   </div>
   <input type="text" id="note" placeholder="Enter message (optional)" />
   <button class="submit-button" onclick="nextStep(2)">Next</button>
