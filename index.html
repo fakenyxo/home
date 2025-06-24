@@ -242,7 +242,7 @@
       const amount = parseFloat(document.getElementById("amount").value);
       const note = document.getElementById("note").value || "Support My Channel";
 
-      if (step > 1 && (!amount || amount < 1 || amount > 10000)) {
+      if (step > 1 && (!amount || amount < 10 || amount > 10000)) {
         alert("Please enter a valid amount between ₹1 and ₹10000.");
         return;
       }
