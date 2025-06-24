@@ -1,183 +1,272 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html lang="en">
 <head>
-    <title>Fake NyXo</title>
-    <link rel="icon" type="image/x-icon" href="favicon (yellow).png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            color: #010f1c;
-            font-family: "Jost", sans-serif;
-            ;
-        }
-
-        body {
-            background: #efefef;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            width: 100%;
-        }
-
-        section {
-            max-width: 95%;
-            max-height: 90vh;
-            width: 600px;
-            background: #fff;
-            padding: 40px;
-            overflow-y: auto;
-            border-top: 10px solid #0989ff;
-            ;
-
-        }
-
-        .flex {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .flex input {
-            border: none;
-            outline: none;
-            padding: 0px 20px;
-            height: 50px;
-            width: 100%;
-            border: 1px solid #e8e8e8;
-        }
-
-        .m10 {
-            margin-top: 10px;
-
-        }
-
-        .m20 {
-            margin-top: 20px;
-        }
-
-        button {
-            width: 200px;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            height: 50px;
-            background: #0989ff;
-            color: #fff;
-            padding: 0px 20px;
-
-        }
-
-        input:focus {
-            border: 1px solid #0989ff;
-        }
-
-        button:hover {
-            background: #0870d0;
-        }
-
-        .get_qr {
-
-            height: 200px;
-            width: 200px;
-            border: 1px solid #999;
-            background: #efefef;
-        }
-
-        .qr_code {
-            width: 100%;
-            height: 100%;
-            display: none;
-        }
-
-        p {
-            color: #7a7a7a;
-            font-size: 16px;
-            line-height: 24px
-        }
-
-        .im {
-            max-width: 100%;
-            width: 300px;
-        }
-    </style>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".generate_qr").click(function() {
-                $(".form").hide();
-                $(".qr_code").show();
-                // var num = $(".number").val();
-                var amount = $(".amount").val();
-                var link = "upi://pay?pa=nyxo@axl%26pn=NyXo%26am=" + amount;
-                var upi = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + link;
-                console.log(upi);
-                $(".get_qr").attr("src", upi);
-            });
-            $(".download_now").click(function() {
-                var name = $(".name").val();
-                var amount = $(".amount").val();
-                // var email = $(".email").val();
-                // var num = $(".number").val();
-                // var id = $(".id").val();
-                if (name != "" && amount != "") {
-                    /*$.post("back.php",{name:name,num:num,email:email,id:id,amount:amount},function(res) {
-                    	if(res==1){
-
-                    	}
-                    	else{
-
-                    	}
-                    });*/
-                } else {
-                    alert("Fill all fields correctly");
-                }
-            });
-        });
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate to Nyxo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e3fdfd, #cbf1f5);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .container {
+      max-width: 420px;
+      background: white;
+      padding: 30px 25px;
+      margin: 40px auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      position: relative;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.5em;
+    }
+    .progress {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .progress div {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ccc;
+      transition: background 0.3s ease;
+    }
+    .progress .active {
+      background: #00c9a7;
+    }
+    .step {
+      display: none;
+    }
+    .step.active {
+      display: block;
+    }
+    .preset-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    .preset-buttons button {
+      flex: 1 1 30%;
+      background-color: #00c9a7;
+      color: white;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .preset-buttons button:hover {
+      background-color: #00b397;
+    }
+    input[type="number"], input[type="text"] {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .tip-message {
+      font-size: 0.9em;
+      margin-top: -5px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tip-icon {
+      font-size: 1.1em;
+    }
+    .tip-valid {
+      color: #00a382;
+    }
+    .tip-invalid {
+      color: #d33c3c;
+    }
+    .radio-group {
+      margin-top: 10px;
+    }
+    .radio-group label {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    .upi-apps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .upi-apps a {
+      flex: 1 1 40%;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      color: #333;
+    }
+    .upi-apps a i {
+      font-size: 36px;
+      margin-bottom: 5px;
+      display: block;
+      color: #00c9a7;
+    }
+    .submit-button {
+      width: 100%;
+      background-color: #00c9a7;
+      color: white;
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .submit-button:hover {
+      background-color: #00b397;
+    }
+    .qr-section {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .qr-section img {
+      width: 200px;
+      height: 200px;
+      border-radius: 12px;
+    }
+    .note {
+      font-size: 0.9em;
+      color: #666;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
 </head>
-
 <body>
-    <section>
-        <h1>Personal Details</h1>
-        <div class="form">
-            <div class="flex m20">
-                <label>Your Name</label>
-                <input type="text" name="name" placeholder="Fake NyXo" class="m10 name" aria-required="true">
-            </div>
-            <!-- <div class="flex m20">
-                <label>Whatsapp Number(With ISD)*</label>
-                <input type="text" name="phone" placeholder="Ex- +910123456789" class="m10 number" aria-required="true">
-            </div> -->
-            <!-- <div class="flex m20">
-                <label>Email*</label>
-                <input type="email" name="email" placeholder="yourmail@email.com" class="m10 email" aria-required="true">
-            </div> -->
-            <div class="flex m20">
-                <label>Amount</label>
-                <input type="number" name="amount" placeholder="₹10-1000" class="m10 amount" aria-required="true">
-            </div>
-            <div class="flex m20">
-                
-                <button class="generate_qr">Donate Now</button>
-            </div>
-        </div>
-        <div class="qr_code m20">
-            <p>Scan the QR Code with any UPI App and pay the amount then download the source code.</p>
-            <center><img src="" alt="QR CODE" class="get_qr m10"></center>
-            <center><img src="1.png" class="im m10"></center>
-            <!-- <div class="flex m20">
-                <label>UTR/REFERENCE/TRANSACTION ID**</label>
-                <input type="number" name="email" placeholder="UTR/REFERENCE/TRANSACTION ID**" class="m10 id">
-            </div> -->
-            <a href="Thanks.html">
-            <button class="download_now m20">Done</button></a>
-        </div>
-    </section>
-</body>
+  <div class="container">
+    <div class="progress">
+      <div id="dot1" class="active"></div>
+      <div id="dot2"></div>
+      <div id="dot3"></div>
+    </div><div class="step active" id="step1">
+  <h2>Enter Amount</h2>
+  <div class="preset-buttons">
+    <button onclick="addAmount(50)">₹50</button>
+    <button onclick="addAmount(100)">₹100</button>
+    <button onclick="addAmount(250)">₹250</button>
+    <button onclick="addAmount(500)">₹500</button>
+    <button onclick="addAmount(1000)">₹1000</button>
+  </div>
+  <input type="number" id="amount" placeholder="Enter amount (₹)" min="1" max="10000" oninput="validateAmount()" />
+  <div id="amountTip" class="tip-message tip-invalid">
+    <span id="amountIcon" class="tip-icon"><i class="fas fa-times-circle"></i></span>
+    <span>Amount must be between ₹1 and ₹10,000.</span>
+  </div>
+  <input type="text" id="note" placeholder="Enter message (optional)" />
+  <button class="submit-button" onclick="nextStep(2)">Next</button>
+</div>
 
+<div class="step" id="step2">
+  <h2>Select Payment App</h2>
+  <div class="upi-apps">
+    <a id="gpay" target="_blank">
+
+  <img src="images/Gpay.png" alt="Google Pay" style="width:48px; height:auto; margin-bottom:5px; display:block; margin-left:auto; margin-right:auto;">
+  <div>Google Pay</div>
+</a>
+        <a id="phonepe" target="_blank">
+  <img src="images/Phonepe.png" alt="PhonePe" style="width:48px; height:auto; margin-bottom:5px; display:block; margin-left:auto; margin-right:auto;">
+  <div>PhonePe</div>
+</a>
+        <a id="paytm" target="_blank">
+  <img src="images/Paytm.png" alt="Paytm" style="width:48px; height:auto; margin-bottom:5px; display:block; margin-left:auto; margin-right:auto;">
+  <div>Paytm</div>
+</a>
+        <a id="other" target="_blank">
+  <img src="images/UPI.png" alt="UPI" style="width:48px; height:auto; margin-bottom:5px; display:block; margin-left:auto; margin-right:auto;">
+  <div>Other UPI</div>
+</a>
+      </div>
+      <div class="qr-section">
+        <p>Or scan this QR with any UPI app:</p>
+        <img id="qr" src="" alt="UPI QR Code" />
+        <p class="note">UPI ID: <strong>nyxo@axl</strong></p>
+      </div>
+      <button class="submit-button" onclick="nextStep(3)">Proceed</button>
+    </div><div class="step" id="step3">
+  <h2>Thank You!</h2>
+  <p class="note"><i class="fas fa-heart"></i> Your support means a lot 💖</p>
+</div>
+
+  </div>  <script>
+    const upiID = "nyxo@axl";
+    const name = "Fake Nyxo";
+    const currency = "INR";
+
+    function addAmount(val) {
+      const amtInput = document.getElementById("amount");
+      let current = parseFloat(amtInput.value) || 0;
+      let newAmt = current + val;
+      if (newAmt > 10000) newAmt = 10000;
+      amtInput.value = newAmt;
+      validateAmount();
+    }
+
+    function validateAmount() {
+      const amt = parseFloat(document.getElementById("amount").value);
+      const tip = document.getElementById("amountTip");
+      const icon = document.getElementById("amountIcon");
+
+      if (amt >= 1 && amt <= 10000) {
+        tip.classList.remove("tip-invalid");
+        tip.classList.add("tip-valid");
+        icon.innerHTML = '<i class="fas fa-check-circle"></i>';
+      } else {
+        tip.classList.remove("tip-valid");
+        tip.classList.add("tip-invalid");
+        icon.innerHTML = '<i class="fas fa-times-circle"></i>';
+      }
+    }
+
+    function nextStep(step) {
+      const amount = parseFloat(document.getElementById("amount").value);
+      const note = document.getElementById("note").value || "Support My Channel";
+
+      if (step > 1 && (!amount || amount < 1 || amount > 10000)) {
+        alert("Please enter a valid amount between ₹1 and ₹10000.");
+        return;
+      }
+
+      for (let i = 1; i <= 3; i++) {
+        document.getElementById("step" + i).classList.remove("active");
+        document.getElementById("dot" + i).classList.remove("active");
+      }
+      document.getElementById("step" + step).classList.add("active");
+      document.getElementById("dot" + step).classList.add("active");
+
+      const encodedNote = encodeURIComponent(note);
+      const encodedAmt = encodeURIComponent(amount);
+      const baseParams = `?pa=${upiID}&pn=${encodeURIComponent(name)}&am=${encodedAmt}&cu=${currency}&tn=${encodedNote}`;
+
+      if (step === 2) {
+        document.getElementById("gpay").href = `https://pay.google.com/gp/p/ui/pay${baseParams}`;
+        document.getElementById("phonepe").href = `phonepe://pay${baseParams}`;
+        document.getElementById("paytm").href = `paytmmp://pay${baseParams}`;
+        document.getElementById("other").href = `upi://pay${baseParams}`;
+
+        const upiUri = `upi://pay?pa=${upiID}&pn=${encodeURIComponent(name)}&am=${encodedAmt}&cu=${currency}&tn=${encodedNote}`;
+        const qrUrl = `https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=${encodeURIComponent(upiUri)}`;
+        document.getElementById("qr").src = qrUrl;
+      }
+    }
+  </script></body>
 </html>
