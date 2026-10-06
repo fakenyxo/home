@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us · Mohd Kaif Khan</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--midnight:#0A0C10;--graphite:#141720;--slate:#1E2230;--arctic:#7EC8E3;--mist:#8A9BB0;--white:#F0F4F8;--flame:#FF5F1F;--font-display:'Syne',sans-serif;--font-body:'Inter',sans-serif;--font-mono:'JetBrains Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--midnight);color:var(--white);font-family:var(--font-body);min-height:100vh;background-image:radial-gradient(600px 400px at 85% -5%,rgba(126,200,227,.12),transparent),radial-gradient(500px 400px at 0% 100%,rgba(212,168,67,.07),transparent)}
+a{color:inherit}
+header{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3rem;border-bottom:1px solid rgba(126,200,227,.1)}
+.logo{font-family:var(--font-display);font-weight:700;text-decoration:none}.logo span{color:var(--arctic)}
+.back{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);text-decoration:none}.back:hover{color:var(--arctic)}
+main{max-width:1000px;margin:0 auto;padding:3.5rem 1.5rem 4rem}
+.eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--arctic);margin-bottom:.8rem}
+h1{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin-bottom:.8rem}h1 em{font-style:normal;color:var(--arctic)}
+.lead{color:rgba(240,244,248,.5);max-width:560px;line-height:1.7;font-size:.95rem;margin-bottom:2.5rem}
+.grid{display:grid;grid-template-columns:1fr 1.3fr;gap:1.5rem;align-items:start}
+.panel{background:rgba(30,34,48,.55);border:1px solid rgba(126,200,227,.12);border-radius:10px;padding:1.6rem;backdrop-filter:blur(14px)}
+.item{display:flex;gap:1rem;align-items:center;text-decoration:none;padding:.9rem 0;border-bottom:1px dashed rgba(240,244,248,.08)}
+.item:last-of-type{border-bottom:0}
+.item svg{width:22px;height:22px;flex:none;stroke:var(--arctic);fill:none;stroke-width:1.5}
+.item small{display:block;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);margin-bottom:.15rem}
+.item:hover b{color:var(--arctic)}
+.quoteBox{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(126,200,227,.12);font-size:.85rem;color:var(--mist);line-height:1.6}
+.quoteBox a{color:var(--arctic)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}.full{grid-column:1/-1}
+label{display:block;font-size:.74rem;color:var(--mist);margin-bottom:.3rem}
+input,select,textarea{width:100%;background:var(--graphite);border:1px solid rgba(240,244,248,.12);border-radius:6px;padding:.75rem .9rem;color:var(--white);font:inherit;font-size:.9rem}
+textarea{min-height:130px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--arctic)}
+.bad{border-color:var(--flame)!important}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:1.2rem}
+.btn{display:flex;justify-content:center;align-items:center;background:var(--arctic);color:var(--midnight);border:0;font-family:var(--font-mono);font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:1rem;border-radius:3px;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--white);border:1px solid rgba(240,244,248,.18)}.btn.ghost:hover{border-color:var(--arctic);color:var(--arctic)}
+.locked .btn{opacity:.35;pointer-events:none}
+.note{font-size:.76rem;color:var(--mist);line-height:1.6;margin-top:.9rem}.note a{color:var(--arctic)}
+#hint{color:var(--flame)}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:1.6rem 3rem;border-top:1px solid rgba(126,200,227,.1);font-size:.78rem;color:var(--mist)}
+footer a{text-decoration:none;margin-left:1.2rem}footer a:hover{color:var(--arctic)}
+@media(max-width:860px){header,footer{padding:1.2rem 1.5rem}.grid,.f2,.btns{grid-template-columns:1fr}footer a{margin:0 1rem 0 0}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="index.html">Mohd Kaif Khan<span>.</span></a><a class="back" href="index.html">← Back to portfolio</a></header>
+<main>
+  <div class="eyebrow">Contact Us</div>
+  <h1>Let's talk about <em>your project</em></h1>
+  <p class="lead">Questions about HVAC design, a collaboration, or a custom requirement? Send a message and I'll respond within 24 hours.</p>
+  <div class="grid">
+    <div class="panel">
+      <a class="item" href="mailto:mohdkaifkhan.w@gmail.com"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><div><small>Email</small><b>mohdkaifkhan.w@gmail.com</b></div></a>
+      <a class="item" href="tel:+918126690277"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 0116 1.18 2 2 0 0118 3.18v3a2 2 0 01-1.61 2A16.06 16.06 0 0115 9.59a16 16 0 006.33 6.33A2 2 0 0122 16.92z"/></svg><div><small>Phone</small><b>+91 81266 90277</b></div></a>
+      <a class="item" href="https://wa.me/918126690277" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-13.3 7.9L3 21l1.2-4.5A9 9 0 1121 12z"/></svg><div><small>WhatsApp</small><b>Message me directly</b></div></a>
+      <a class="item" href="https://www.linkedin.com/in/mohdkaifkhan/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg><div><small>LinkedIn</small><b>mohdkaifkhan</b></div></a>
+      <a class="item" href="https://maps.app.goo.gl/sRTUGhccRL2ncZMf8" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><div><small>Location</small><b>New Delhi, India (serving NCR)</b></div></a>
+      <div class="quoteBox">Need a price right away? <a href="hire.html">Get an instant quote and hire me →</a></div>
+    </div>
+
+    <div class="panel" id="formBox">
+      <div class="f2">
+        <div><label>Your name *</label><input id="n" autocomplete="name"></div>
+        <div><label>Email *</label><input id="e" type="email" autocomplete="email"></div>
+        <div><label>Phone / WhatsApp</label><input id="p" type="tel" autocomplete="tel"></div>
+        <div><label>Topic</label><select id="t"><option>Project enquiry</option><option>Quote / pricing</option><option>Collaboration</option><option>General question</option><option>Other</option></select></div>
+        <div class="full"><label>Message *</label><textarea id="m"></textarea></div>
+      </div>
+      <p class="note" id="hint"></p>
+      <div class="btns locked" id="btns">
+        <button class="btn" id="wa" type="button">Send on WhatsApp</button>
+        <a class="btn ghost" id="mail" href="#">Send by email</a>
+      </div>
+      <p class="note">This form doesn't store anything. It opens WhatsApp or your email app with your message ready to send. See the <a href="privacy.html">Privacy Policy</a>.</p>
+    </div>
+  </div>
+</main>
+<footer><span>© Mohd Kaif Khan · HVAC Engineer &amp; Systems Specialist</span>
+<span><a href="index.html">Home</a><a href="contact.html">Contact</a><a href="support.html">Support</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="hire.html">Hire Me</a></span></footer>
+<script>
+const $=id=>document.getElementById(id);
+const EMAIL='mohdkaifkhan.w@gmail.com', WA='918126690277';
+const okE=()=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('e').value.trim());
+const ok={n:()=>$('n').value.trim().length>=2,e:okE,m:()=>$('m').value.trim().length>=5};
+const msg=()=>`Hi Kaif,\n\nTopic: ${$('t').value}\n\n${$('m').value.trim()}\n\nName: ${$('n').value.trim()}\nEmail: ${$('e').value.trim()}\nPhone: ${$('p').value.trim()||'-'}`;
+const ready=()=>Object.values(ok).every(f=>f());
+function gate(){
+  const miss=[['n','your name'],['e','a valid email'],['m','your message']].filter(([k])=>!ok[k]());
+  ['n','e','m'].forEach(k=>$(k).classList.toggle('bad',!ok[k]()&&$(k).value!==''));
+  $('btns').classList.toggle('locked',!ready());
+  $('hint').textContent=ready()?'':'Please enter '+miss.map(x=>x[1]).join(', ')+' to send.';
+  $('mail').href=`mailto:${EMAIL}?subject=${encodeURIComponent($('t').value+' — website enquiry')}&body=${encodeURIComponent(msg())}`;
+}
+['n','e','p','t','m'].forEach(id=>$(id).addEventListener('input',gate));
+$('wa').onclick=()=>{if(ready())window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg())}`,'_blank')};
+$('mail').addEventListener('click',e=>{if(!ready())e.preventDefault()});
+gate();
+</script>
+</body>
+</html>
