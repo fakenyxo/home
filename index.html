@@ -118,6 +118,7 @@
     border-radius: 2px;
   }
   .nav-cta:hover { background: var(--arctic); color: var(--midnight); }
+  .nav-hire-mobile { display: none; }
 
   /* ==================== HERO ==================== */
   #hero {
@@ -978,6 +979,7 @@
     nav { padding: 1.5rem 2rem; }
     .nav-links { display: none; }
     .nav-cta { display: none; }
+    .nav-hire-mobile { display: list-item; }
     .hamburger { display: flex; }
     section { padding: 5rem 2rem; }
     #hero { padding: 0 2rem; }
@@ -1290,8 +1292,9 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#testimonials">Reviews</a></li>
+    <li class="nav-hire-mobile"><a href="hire.html" style="color:var(--arctic)">Hire Me</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Hire Me</a>
+  <a href="hire.html" class="nav-cta">Hire Me</a>
   <div class="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hire Me — HVAC Design Quote & Payment · Mohd Kaif Khan</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--midnight:#0A0C10;--graphite:#141720;--slate:#1E2230;--ice:#C8E6F5;--arctic:#7EC8E3;--flame:#FF5F1F;--mist:#8A9BB0;--white:#F0F4F8;--gold:#D4A843;
+--font-display:'Syne',sans-serif;--font-body:'Inter',sans-serif;--font-mono:'JetBrains Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--midnight);color:var(--white);font-family:var(--font-body);min-height:100vh;
+background-image:radial-gradient(600px 400px at 85% -5%,rgba(126,200,227,.12),transparent),radial-gradient(500px 400px at 0% 100%,rgba(212,168,67,.07),transparent)}
+a{color:inherit}
+header{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3rem;border-bottom:1px solid rgba(126,200,227,.1)}
+.logo{font-family:var(--font-display);font-weight:700;text-decoration:none}.logo span{color:var(--arctic)}
+.back{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);text-decoration:none}
+.back:hover{color:var(--arctic)}
+main{max-width:1080px;margin:0 auto;padding:3.5rem 1.5rem 5rem}
+.eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--arctic);margin-bottom:.8rem}
+h1{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin-bottom:.8rem}
+h1 em{font-style:normal;color:var(--arctic)}
+.lead{color:rgba(240,244,248,.5);max-width:560px;line-height:1.7;font-size:.95rem;margin-bottom:2.5rem}
+.grid{display:grid;grid-template-columns:1.4fr 1fr;gap:1.5rem;align-items:start}
+.panel{background:rgba(30,34,48,.55);border:1px solid rgba(126,200,227,.12);border-radius:10px;padding:1.6rem;backdrop-filter:blur(14px)}
+.panel+.panel{margin-top:1.2rem}
+h3{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);font-weight:500;margin-bottom:1rem}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.7rem}
+.opt{border:1px solid rgba(240,244,248,.12);border-radius:8px;padding:.9rem 1rem;cursor:pointer;background:transparent;color:var(--white);text-align:left;font-family:var(--font-body);transition:.2s}
+.opt b{display:block;font-size:.92rem;margin-bottom:.2rem}.opt small{color:var(--mist);font-size:.76rem;line-height:1.4;display:block}
+.opt:hover{border-color:var(--arctic)}
+.opt.on{border-color:var(--arctic);background:rgba(126,200,227,.1);box-shadow:0 0 0 1px var(--arctic) inset}
+.area{display:flex;gap:1rem;align-items:center}
+.area input[type=number]{width:140px}
+input[type=range]{flex:1;accent-color:var(--arctic)}
+input[type=number],input[type=text],input[type=email],input[type=tel]{width:100%;background:var(--graphite);border:1px solid rgba(240,244,248,.12);border-radius:6px;padding:.75rem .9rem;color:var(--white);font:inherit;font-size:.9rem}
+input:focus{outline:none;border-color:var(--arctic)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}.f2 .full{grid-column:1/-1}
+label{display:block;font-size:.74rem;color:var(--mist);margin-bottom:.3rem}
+.quote{position:sticky;top:1.5rem}
+.row{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px dashed rgba(240,244,248,.08);font-size:.88rem}
+.row span:first-child{color:var(--mist)}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin:1rem 0 .3rem}
+.total span:first-child{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--mist)}
+.total b{font-family:var(--font-display);font-size:2rem;color:var(--gold)}
+.adv{background:rgba(212,168,67,.08);border:1px solid rgba(212,168,67,.25);border-radius:8px;padding:.8rem 1rem;font-size:.85rem;display:flex;justify-content:space-between;margin:.8rem 0 1.2rem}
+.adv b{color:var(--gold)}
+.btn{width:100%;display:flex;justify-content:center;align-items:center;gap:.6rem;background:var(--arctic);color:var(--midnight);border:0;font-family:var(--font-mono);font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:1rem;border-radius:3px;cursor:pointer;text-decoration:none;transition:.2s;box-shadow:0 0 30px rgba(126,200,227,.2)}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--white);border:1px solid rgba(240,244,248,.18);box-shadow:none;margin-top:.7rem}
+.btn.ghost:hover{border-color:var(--arctic);color:var(--arctic)}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.note{font-size:.74rem;color:var(--mist);line-height:1.6;margin-top:1rem}
+#pay{display:none}
+#pay.show{display:block}
+.ref{font-family:var(--font-mono);color:var(--arctic);font-size:.85rem}
+#qr{background:#fff;padding:10px;border-radius:8px;width:fit-content;margin:1rem auto 0}
+.hide{display:none!important}
+.agree{display:flex;gap:.7rem;align-items:flex-start;margin-top:1.4rem;font-size:.85rem;line-height:1.5;color:rgba(240,244,248,.75);cursor:pointer}
+.agree input{margin-top:.2rem;accent-color:var(--arctic);width:16px;height:16px;flex:none}
+.agree a,.tlink{color:var(--arctic);cursor:pointer;text-decoration:underline;background:none;border:0;font:inherit}
+.locked .btn{opacity:.35;pointer-events:none}.locked #qr{filter:blur(6px);opacity:.5}
+.mb{position:fixed;inset:0;background:rgba(10,12,16,.8);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:1.2rem;z-index:50}
+.mb.open{display:flex}
+.modal{background:var(--graphite);border:1px solid rgba(126,200,227,.2);border-radius:10px;max-width:700px;width:100%;max-height:85vh;display:flex;flex-direction:column}
+.mh{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 1.5rem;border-bottom:1px solid rgba(240,244,248,.08)}
+.mh b{font-family:var(--font-display);font-size:1.2rem}.mh button{background:none;border:0;color:var(--mist);font-size:1.2rem;cursor:pointer}
+.mbody{overflow:auto;padding:1.2rem 1.5rem 1.6rem;font-size:.86rem;line-height:1.7;color:rgba(240,244,248,.75)}
+.mbody h4{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--arctic);margin:1.2rem 0 .3rem;font-weight:500}
+.mbody h4:first-child{margin-top:0}
+@media(max-width:860px){header{padding:1.2rem 1.5rem}.grid{grid-template-columns:1fr}.quote{position:static}.f2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html">Mohd Kaif Khan<span>.</span></a>
+  <a class="back" href="index.html">← Back to portfolio</a>
+</header>
+
+<main>
+  <div class="eyebrow">Hire Me · HVAC Design</div>
+  <h1>Get your <em>instant quote</em><br>and start your project</h1>
+  <p class="lead">Choose your building type and project size to see the design fee right away. Pay the advance online to lock in your slot — I'll confirm within 24 hours.</p>
+
+  <div class="grid">
+    <div>
+      <div class="panel">
+        <h3>1 · Building type</h3>
+        <div class="opts" id="types"></div>
+      </div>
+      <div class="panel">
+        <h3>2 · Project size (air-conditioned area)</h3>
+        <div class="area">
+          <input type="number" id="areaNum" min="100" step="50" value="5000">
+          <span style="color:var(--mist);font-size:.85rem">sq ft</span>
+          <input type="range" id="areaRange" min="500" max="50000" step="250" value="5000">
+        </div>
+      </div>
+      <div class="panel">
+        <h3>3 · Scope of work</h3>
+        <div class="opts" id="scopes"></div>
+      </div>
+    </div>
+
+    <aside class="panel quote">
+      <h3>Your quote</h3>
+      <div class="row"><span>Building</span><b id="qType">—</b></div>
+      <div class="row"><span>Area</span><b id="qArea">—</b></div>
+      <div class="row"><span>Rate</span><b id="qRate">—</b></div>
+      <div class="row"><span>Scope</span><b id="qScope">—</b></div>
+      <div class="row hide" id="gstRow"><span>GST</span><b id="qGst">—</b></div>
+      <div class="total"><span>Total fee</span><b id="qTotal">—</b></div>
+      <div class="adv"><span id="advLabel">Advance to start</span><b id="qAdv">—</b></div>
+
+      <h3 style="margin-top:.4rem">Payment schedule</h3>
+      <div id="sched" style="margin-bottom:1.2rem"></div>
+
+      <button class="btn" id="goBtn">Continue to hire &amp; pay →</button>
+      <p class="note">By continuing you agree to the <button type="button" class="tlink" onclick="openTerms(event)">Terms of Service</button>.<br>Quote is an estimate based on area and building type. Final fee is confirmed after reviewing drawings/requirements.</p>
+    </aside>
+  </div>
+
+  <div class="panel" id="pay" style="margin-top:1.5rem">
+    <h3>4 · Your details &amp; payment</h3>
+    <div class="f2">
+      <div><label>Your name</label><input type="text" id="cName" autocomplete="name"></div>
+      <div><label>Email</label><input type="email" id="cEmail" autocomplete="email"></div>
+      <div><label>Phone / WhatsApp</label><input type="tel" id="cPhone" autocomplete="tel"></div>
+      <div><label>Project name / location</label><input type="text" id="cProj"></div>
+    </div>
+    <p class="note">Quote reference: <span class="ref" id="refId"></span> · Advance due: <b id="payAmt" style="color:var(--gold)"></b></p>
+
+    <label class="agree"><input type="checkbox" id="agree"><span>I have read and agree to the <button type="button" class="tlink" onclick="openTerms(event)">Terms of Service</button>.</span></label>
+    <div style="max-width:420px;margin-top:1.2rem" id="payBtns" class="locked">
+      <button class="btn hide" id="linkBtn">Pay advance online (Card / UPI / Netbanking)</button>
+      <a class="btn ghost hide" id="upiBtn" href="#">Pay with UPI app</a>
+      <div id="qr" class="hide"></div>
+      <button class="btn ghost" id="sendBtn">Send my quote to Kaif on WhatsApp</button>
+      <a class="btn ghost" id="mailBtn" href="#">Send my quote by email</a>
+    </div>
+    <p class="note">After paying, send the payment screenshot / reference on WhatsApp or email quoting your quote reference so I can confirm and kick off your project.</p>
+  </div>
+</main>
+
+
+<div class="mb" id="termsModal" onclick="if(event.target===this)closeTerms()">
+ <div class="modal">
+  <div class="mh"><b>Terms of Service</b><button onclick="closeTerms()" aria-label="Close">✕</button></div>
+  <div class="mbody">
+   <p style="color:var(--mist);margin-bottom:1rem">Freelance HVAC design services by Mohd Kaif Khan ("Designer") for the client named in the quote ("Client"). Version 1.1.</p>
+   <h4>1. Scope of work</h4><p>Work is limited to the scope selected in your quote (Concept Design, Detailed Design, or Design + Site Support) for HVAC only. Electrical, plumbing, fire fighting, structural and civil design are not included. Work outside the agreed scope or area is quoted separately.</p>
+   <h4>2. Fees &amp; payment</h4><p>The quote is an estimate based on building type, area and scope. The final fee is confirmed in writing after the Designer reviews your drawings and requirements. Payment is made in milestones: 50% advance before work begins; 20% after delivery of the load summary and equipment selection; 20% after delivery of drawings; and 10% after final approval. Late payments may pause work. Taxes (including GST, where applicable) are charged extra as required by law.</p>
+   <h4>3. Timeline</h4><p>The timeline starts only after the advance is received and the Client has supplied the required inputs (architectural drawings, requirements, site details). Delays in providing inputs or approvals extend the timeline accordingly.</p>
+   <h4>4. Client responsibilities</h4><p>The Client will provide accurate, complete and timely information, and give feedback within a reasonable time. The Designer is not responsible for errors caused by incorrect or changed inputs.</p>
+   <h4>5. Revisions</h4><p>The revisions included in the fee depend on the selected scope: Concept Design — 2 revisions; Drawings Only — 2 revisions; Detailed Design — 5 revisions; Design + Site Support — 5 revisions. Further revisions, or changes caused by a new layout or a change of requirements after approval, are charged separately.</p>
+   <h4>6. Deliverables &amp; ownership</h4><p>Deliverables are issued in PDF at each milestone, and the matching payment falls due on delivery. The final approved set, and any editable files (e.g. CAD, only if agreed in writing), are released once all milestone payments are received. On full payment, the Client may use the deliverables for the project they were prepared for. The Designer keeps the right to reuse general know-how and may show non-confidential work in a portfolio unless the Client objects in writing.</p>
+   <h4>7. Site support</h4><p>The &quot;Design + Site Support&quot; scope includes 2 site visits within the NCR region. Additional visits, and travel outside NCR, are charged separately. Site visits are not included in the other scopes.</p>
+   <h4>8. Cancellation &amp; refunds</h4><p>If the Client cancels before work starts, the advance is refunded less payment-gateway charges. Once work has started, the advance and any milestone payments already made are non-refundable, and the Client pays for work completed up to the cancellation date.</p>
+   <h4>9. Confidentiality</h4><p>Both parties will keep the other's non-public project and business information confidential and use it only for this project.</p>
+   <h4>10. Liability</h4><p>The design is prepared with reasonable professional care using the information provided. Final responsibility for installation, equipment procurement, site execution and approvals from statutory authorities rests with the Client and their contractors. To the extent permitted by law, the Designer's total liability for any claim is limited to the fees paid for the work in question, and the Designer is not liable for indirect or consequential losses.</p>
+   <h4>11. Governing law</h4><p>These terms are governed by the laws of India. The parties will first try to settle any dispute in good faith; unresolved disputes fall under the jurisdiction of the courts at New Delhi.</p>
+   <h4>12. Acceptance</h4><p>Ticking "I agree" and paying the advance or sending a quote request means you accept these terms. The Designer may update these terms; the version shown when you request your quote applies to that project.</p>
+  </div>
+ </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+/* =====================  EDIT THIS BLOCK  ===================== */
+const CONFIG = {
+  email: 'mohdkaifkhan.w@gmail.com',
+  whatsapp: '918126690277',      // country code + number, no + or spaces
+  upiId: '',                     // e.g. 'yourname@okhdfcbank'  → enables UPI app button + QR
+  paymentLink: '',               // Razorpay / Cashfree / Instamojo payment link → enables online card/UPI/netbanking button
+  payeeName: 'Mohd Kaif Khan',
+  gstPct: 0,                     // set 18 once GST-registered; 0 hides the GST line
+  minFee: 15000                  // minimum project fee (INR)
+};
+
+/* Payment schedule (% of total fee). The first milestone is the advance. */
+const MILESTONES = [
+  { pct: 50, label: 'Advance — to start work' },
+  { pct: 20, label: 'After load summary + equipment selection' },
+  { pct: 20, label: 'After delivery of drawings' },
+  { pct: 10, label: 'After final approval' }
+];
+
+/* Rates in INR per sq ft, set per scope. `mult` adjusts the price by building type (1 = same rate). */
+const TYPES = {
+  residential: { name: 'Residential', desc: 'Villas, apartments, farmhouses', mult: 1 },
+  commercial:  { name: 'Commercial',  desc: 'Offices, retail, restaurants',   mult: 1 },
+  hospital:    { name: 'Hospital',    desc: 'Hospitals, clinics, labs, OT',   mult: 1 }
+};
+const SCOPES = {
+  concept:  { name: 'Concept Design',        rate: 6,  desc: 'Load calc, system selection, equipment sizing · 2 revisions' },
+  drawings: { name: 'Drawings Only',         rate: 6,  desc: 'HVAC layout & detail drawings · 2 revisions' },
+  detailed: { name: 'Detailed Design',       rate: 12, desc: 'Concept + layouts, ducting/piping drawings, BOQ · 5 revisions' },
+  full:     { name: 'Design + Site Support', rate: 15, desc: 'Detailed design + 5 revisions + 2 site visits' }
+};
+/* ============================================================= */
+
+const $ = id => document.getElementById(id);
+const inr = n => '₹' + Math.round(n).toLocaleString('en-IN');
+let type = 'commercial', scope = 'detailed', area = 5000, quote = null;
+
+function mkOpts(el, data, key, cb) {
+  el.innerHTML = '';
+  Object.entries(data).forEach(([k, v]) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'opt'; b.dataset.k = k;
+    b.innerHTML = `<b>${v.name}</b><small>${v.desc}</small>`;
+    b.onclick = () => { cb(k); mark(el, k); calc(); };
+    el.appendChild(b);
+  });
+  mark(el, key);
+}
+function mark(el, k) { el.querySelectorAll('.opt').forEach(o => o.classList.toggle('on', o.dataset.k === k)); }
+
+function calc() {
+  const rate = SCOPES[scope].rate * TYPES[type].mult;
+  const base = Math.max(CONFIG.minFee, area * rate);
+  const gst = base * CONFIG.gstPct / 100;
+  const total = base + gst;
+  let used = 0;
+  const parts = MILESTONES.map((m, i) => {
+    const amt = i === MILESTONES.length - 1 ? total - used : Math.round(total * m.pct / 100);
+    used += amt;
+    return { ...m, amt };
+  });
+  const adv = parts[0].amt;
+  quote = { total, adv, rate, gst, parts };
+  $('qType').textContent = TYPES[type].name;
+  $('qArea').textContent = area.toLocaleString('en-IN') + ' sq ft';
+  $('qRate').textContent = inr(rate) + ' / sq ft';
+  $('qScope').textContent = SCOPES[scope].name;
+  $('gstRow').classList.toggle('hide', !CONFIG.gstPct);
+  $('qGst').textContent = inr(gst) + ` (${CONFIG.gstPct}%)`;
+  $('qTotal').textContent = inr(total);
+  $('advLabel').textContent = `Advance to start (${MILESTONES[0].pct}%)`;
+  $('qAdv').textContent = inr(adv);
+  $('sched').innerHTML = parts.map(m => `<div class="row"><span>${m.pct}% · ${m.label}</span><b>${inr(m.amt)}</b></div>`).join('');
+  if ($('pay').classList.contains('show')) buildPay();
+}
+
+function setArea(v) {
+  area = Math.max(100, Math.round(+v) || 100);
+  $('areaNum').value = area;
+  $('areaRange').value = Math.min(area, 50000);
+  calc();
+}
+$('areaNum').oninput = e => { area = Math.max(100, Math.round(+e.target.value) || 100); $('areaRange').value = Math.min(area, 50000); calc(); };
+$('areaRange').oninput = e => setArea(e.target.value);
+
+let ref = '';
+function summary() {
+  const c = { n: $('cName').value.trim(), e: $('cEmail').value.trim(), p: $('cPhone').value.trim(), j: $('cProj').value.trim() };
+  return `Hi Kaif, I'd like to hire you for HVAC design.\n\nQuote ref: ${ref}\nBuilding: ${TYPES[type].name}\nArea: ${area.toLocaleString('en-IN')} sq ft\nScope: ${SCOPES[scope].name}\nTotal fee: ${inr(quote.total)}\nAdvance (${MILESTONES[0].pct}%): ${inr(quote.adv)}\nTerms of Service v1.1: ${$('agree').checked?'accepted':'not yet accepted'}\n\nName: ${c.n}\nEmail: ${c.e}\nPhone: ${c.p}\nProject: ${c.j}`;
+}
+function buildPay() {
+  if (!ref) ref = 'KK-' + new Date().toISOString().slice(2, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
+  $('refId').textContent = ref;
+  $('payAmt').textContent = inr(quote.adv);
+  const msg = summary();
+  $('mailBtn').href = `mailto:${CONFIG.email}?subject=${encodeURIComponent('HVAC design project — ' + ref)}&body=${encodeURIComponent(msg)}`;
+  $('sendBtn').onclick = () => window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
+
+  $('linkBtn').classList.toggle('hide', !CONFIG.paymentLink);
+  $('linkBtn').onclick = () => window.open(CONFIG.paymentLink, '_blank');
+
+  const hasUpi = !!CONFIG.upiId;
+  $('upiBtn').classList.toggle('hide', !hasUpi);
+  $('qr').classList.toggle('hide', !hasUpi);
+  if (hasUpi) {
+    const upi = `upi://pay?pa=${encodeURIComponent(CONFIG.upiId)}&pn=${encodeURIComponent(CONFIG.payeeName)}&am=${Math.round(quote.adv)}&cu=INR&tn=${encodeURIComponent(ref)}`;
+    $('upiBtn').href = upi;
+    $('qr').innerHTML = '';
+    if (window.QRCode) new QRCode($('qr'), { text: upi, width: 160, height: 160 });
+  }
+}
+$('goBtn').onclick = () => {
+  $('pay').classList.add('show');
+  buildPay();
+  $('pay').scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
+['cName', 'cEmail', 'cPhone', 'cProj'].forEach(id => $(id).addEventListener('input', () => { if (ref) buildPay(); }));
+
+function openTerms(e){if(e)e.preventDefault();$('termsModal').classList.add('open')}
+function closeTerms(){$('termsModal').classList.remove('open')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeTerms()});
+$('agree').onchange=()=>{$('payBtns').classList.toggle('locked',!$('agree').checked);if(ref)buildPay()};
+
+mkOpts($('types'), TYPES, type, k => type = k);
+mkOpts($('scopes'), SCOPES, scope, k => scope = k);
+calc();
+</script>
+</body>
+</html>
