@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write a Review · Mohd Kaif Khan</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--midnight:#0A0C10;--graphite:#141720;--slate:#1E2230;--arctic:#7EC8E3;--mist:#8A9BB0;--white:#F0F4F8;--flame:#FF5F1F;--font-display:'Syne',sans-serif;--font-body:'Inter',sans-serif;--font-mono:'JetBrains Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--midnight);color:var(--white);font-family:var(--font-body);min-height:100vh;background-image:radial-gradient(600px 400px at 85% -5%,rgba(126,200,227,.12),transparent),radial-gradient(500px 400px at 0% 100%,rgba(212,168,67,.07),transparent)}
+a{color:inherit}
+header{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3rem;border-bottom:1px solid rgba(126,200,227,.1)}
+.logo{font-family:var(--font-display);font-weight:700;text-decoration:none}.logo span{color:var(--arctic)}
+.back{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);text-decoration:none}.back:hover{color:var(--arctic)}
+main{max-width:1000px;margin:0 auto;padding:3.5rem 1.5rem 4rem}
+.eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--arctic);margin-bottom:.8rem}
+h1{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin-bottom:.8rem}h1 em{font-style:normal;color:var(--arctic)}
+.lead{color:rgba(240,244,248,.5);max-width:560px;line-height:1.7;font-size:.95rem;margin-bottom:2.5rem}
+.grid{display:grid;grid-template-columns:1fr 1.3fr;gap:1.5rem;align-items:start}
+.panel{background:rgba(30,34,48,.55);border:1px solid rgba(126,200,227,.12);border-radius:10px;padding:1.6rem;backdrop-filter:blur(14px)}
+.item{display:flex;gap:1rem;align-items:center;text-decoration:none;padding:.9rem 0;border-bottom:1px dashed rgba(240,244,248,.08)}
+.item:last-of-type{border-bottom:0}
+.item svg{width:22px;height:22px;flex:none;stroke:var(--arctic);fill:none;stroke-width:1.5}
+.item small{display:block;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);margin-bottom:.15rem}
+.item:hover b{color:var(--arctic)}
+.quoteBox{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(126,200,227,.12);font-size:.85rem;color:var(--mist);line-height:1.6}
+.quoteBox a{color:var(--arctic)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}.full{grid-column:1/-1}
+label{display:block;font-size:.74rem;color:var(--mist);margin-bottom:.3rem}
+input,select,textarea{width:100%;background:var(--graphite);border:1px solid rgba(240,244,248,.12);border-radius:6px;padding:.75rem .9rem;color:var(--white);font:inherit;font-size:.9rem}
+textarea{min-height:130px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--arctic)}
+.bad{border-color:var(--flame)!important}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:1.2rem}
+.btn{display:flex;justify-content:center;align-items:center;background:var(--arctic);color:var(--midnight);border:0;font-family:var(--font-mono);font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:1rem;border-radius:3px;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--white);border:1px solid rgba(240,244,248,.18)}.btn.ghost:hover{border-color:var(--arctic);color:var(--arctic)}
+.locked .btn{opacity:.35;pointer-events:none}
+.note{font-size:.76rem;color:var(--mist);line-height:1.6;margin-top:.9rem}.note a{color:var(--arctic)}
+#hint{color:var(--flame)}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:1.6rem 3rem;border-top:1px solid rgba(126,200,227,.1);font-size:.78rem;color:var(--mist)}
+footer a{text-decoration:none;margin-left:1.2rem}footer a:hover{color:var(--arctic)}
+@media(max-width:860px){header,footer{padding:1.2rem 1.5rem}.grid,.f2,.btns{grid-template-columns:1fr}footer a{margin:0 1rem 0 0}}
+.stars{display:flex;gap:.3rem}.stars button{background:none;border:0;font-size:1.9rem;line-height:1;color:rgba(240,244,248,.2);cursor:pointer;transition:.15s}.stars button.on{color:var(--gold,#D4A843)}.agree{display:flex;gap:.7rem;align-items:flex-start;margin-top:1.2rem;font-size:.84rem;line-height:1.55;color:rgba(240,244,248,.75);cursor:pointer}.agree input{width:16px;height:16px;margin-top:.2rem;flex:none;accent-color:var(--arctic)}.agree a{color:var(--arctic)}.wrap{max-width:720px;margin:0 auto}footer.site-footer{display:block;padding:3rem 3rem 1.5rem;border-top:1px solid rgba(126,200,227,.12);background:rgba(10,12,16,.6);text-align:left;font-size:.85rem;color:var(--mist)}
+.sf-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1.1fr 1.3fr;gap:2rem}
+.sf-grid h5{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:.9rem;font-weight:500}
+.site-footer a{display:block;color:var(--mist);text-decoration:none;margin:0 0 .5rem;padding:0}.site-footer a:hover{color:var(--arctic)}
+.site-footer a.sf-logo{font-family:var(--font-display);font-weight:700;color:var(--white);font-size:1.1rem}.sf-logo span{color:var(--arctic)}
+.site-footer p{line-height:1.7;margin-top:.6rem;max-width:340px}.site-footer .sf-small{font-size:.74rem}.sf-loc{display:block;margin-top:.2rem}
+.sf-bottom{max-width:1100px;margin:2rem auto 0;padding-top:1.2rem;border-top:1px solid rgba(240,244,248,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-size:.76rem}
+@media(max-width:860px){footer.site-footer{padding:2rem 1.5rem 1.2rem}.sf-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.sf-grid{grid-template-columns:1fr}}
+.sh{gap:1rem;flex-wrap:wrap}.sh nav{display:flex;gap:1.3rem;align-items:center;flex-wrap:wrap}.sh nav a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);text-decoration:none}.sh nav a:hover{color:var(--arctic)}.sh nav a.cta{border:1px solid var(--arctic);color:var(--arctic);padding:.5rem 1rem;border-radius:2px}.sh nav a.cta:hover{background:var(--arctic);color:var(--midnight)}
+@media(max-width:700px){.sh{flex-direction:column;align-items:flex-start}.sh nav{gap:.9rem}}
+</style>
+</head>
+<body>
+<header class="sh"><a class="logo" href="index.html">Mohd Kaif Khan<span>.</span></a><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a><a href="support.html">Support</a><a class="cta" href="hire.html">Hire Me</a></nav></header>
+<main class="wrap">
+  <div class="eyebrow">Client Reviews</div>
+  <h1>Share your <em>experience</em></h1>
+  <p class="lead">Worked with me on an HVAC project? I'd value your honest feedback. It helps future clients and helps me improve.</p>
+  <div class="panel">
+    <div class="f2">
+      <div><label>Your name *</label><input id="n" autocomplete="name"></div>
+      <div><label>Email * (never published)</label><input id="e" type="email" autocomplete="email"></div>
+      <div><label>Role / company (optional)</label><input id="r" placeholder="e.g. Architect, ABC Designs"></div>
+      <div><label>Project type</label><select id="pt"><option>Residential</option><option>Commercial</option><option>Hospital</option><option>Other</option></select></div>
+      <div><label>Quote reference (if hired via this site)</label><input id="q" placeholder="e.g. KK-261007-AB12"></div>
+      <div><label>Show my name as</label><select id="dn"><option value="full">Full name</option><option value="short">First name + last initial</option><option value="init">Initials only</option></select></div>
+      <div class="full"><label>Your rating *</label><div class="stars" id="stars"></div></div>
+      <div class="full"><label>Your review * (at least 20 characters)</label><textarea id="m"></textarea></div>
+    </div>
+    <label class="agree"><input type="checkbox" id="ok"><span>I confirm this review is my own honest experience, and I allow Mohd Kaif Khan to publish it on his website and professional profiles with the name format chosen above (and role/company if given). My email is not published. I can ask for edits or removal at any time. See the <a href="privacy.html">Privacy Policy</a>.</span></label>
+    <p class="note" id="hint"></p>
+    <div class="btns locked" id="btns">
+      <button class="btn" id="wa" type="button">Send on WhatsApp</button>
+      <a class="btn ghost" id="mail" href="#">Send by email</a>
+    </div>
+    <p class="note">This form stores nothing. It opens WhatsApp or your email app with your review ready to send. Reviews are checked before publishing; abusive, off-topic or unverifiable reviews may not be published.</p>
+  </div>
+</main>
+<footer class="site-footer">
+ <div class="sf-grid">
+  <div><a class="sf-logo" href="index.html">Mohd Kaif Khan<span>.</span></a>
+   <p>Freelance HVAC design consultancy: concept design, drawings, detailed design and site support for residential, commercial and hospital projects.</p>
+   <p class="sf-small">Business name: Mohd Kaif Khan — HVAC Design Consultant</p></div>
+  <div><h5>Company</h5><a href="about.html">About Us</a><a href="pricing.html">Services &amp; Pricing</a><a href="hire.html">Hire Me</a><a href="review.html">Write a Review</a></div>
+  <div><h5>Policies</h5><a href="terms.html">Terms &amp; Conditions</a><a href="privacy.html">Privacy Policy</a><a href="refund.html">Refund &amp; Cancellation Policy</a><a href="delivery.html">Service Delivery Policy</a></div>
+  <div><h5>Contact</h5><a href="contact.html">Contact Us</a><a href="support.html">Support</a><a href="mailto:mohdkaifkhan.w@gmail.com">mohdkaifkhan.w@gmail.com</a><a href="https://wa.me/918126690277" target="_blank" rel="noopener">+91 81266 90277 (WhatsApp)</a><span class="sf-loc">New Delhi, India</span></div>
+ </div>
+ <div class="sf-bottom"><span>© 2026 Mohd Kaif Khan. All rights reserved.</span><span>All prices are in Indian Rupees (INR).</span></div>
+</footer>
+<script>
+const $=id=>document.getElementById(id);
+const EMAIL='mohdkaifkhan.w@gmail.com', WA='918126690277';
+let rating=0;
+const st=$('stars');
+for(let i=1;i<=5;i++){const b=document.createElement('button');b.type='button';b.textContent='★';b.setAttribute('aria-label',i+' star'+(i>1?'s':''));b.onclick=()=>{rating=i;paint();gate()};st.appendChild(b)}
+function paint(){[...st.children].forEach((b,i)=>b.classList.toggle('on',i<rating))}
+const shown=()=>{const p=$('n').value.trim().split(/\s+/);const f=p[0]||'',l=p.length>1?p[p.length-1]:'';
+  if($('dn').value==='short')return l?f+' '+l[0].toUpperCase()+'.':f;
+  if($('dn').value==='init')return p.map(w=>w[0]?w[0].toUpperCase()+'.':'').join('');
+  return $('n').value.trim()};
+const ok={n:()=>$('n').value.trim().length>=2,e:()=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('e').value.trim()),s:()=>rating>0,m:()=>$('m').value.trim().length>=20,c:()=>$('ok').checked,
+  q:()=>!$('q').value.trim()||/^KK-[A-Z0-9-]{4,}$/i.test($('q').value.trim())};
+const msg=()=>`Hi Kaif, here is my review.\n\nRating: ${rating}/5\nProject type: ${$('pt').value}\nQuote ref: ${$('q').value.trim()||'-'}\n\n"${$('m').value.trim()}"\n\nPublish as: ${shown()}${$('r').value.trim()?', '+$('r').value.trim():''}\nPermission to publish: Yes\nEmail (not for publishing): ${$('e').value.trim()}`;
+const ready=()=>Object.values(ok).every(f=>f());
+function gate(){
+  const lab={n:'your name',e:'a valid email',s:'a star rating',m:'your review (20+ characters)',c:'permission to publish',q:'a valid quote reference (or leave it blank)'};
+  const miss=Object.keys(ok).filter(k=>!ok[k]());
+  ['n','e','m','q'].forEach(k=>$(k).classList.toggle('bad',!ok[k]()&&$(k).value!==''));
+  $('btns').classList.toggle('locked',!ready());
+  $('hint').textContent=ready()?'':'Please provide '+miss.map(k=>lab[k]).join(', ')+'.';
+  $('mail').href=`mailto:${EMAIL}?subject=${encodeURIComponent('Client review — '+rating+'/5')}&body=${encodeURIComponent(msg())}`;
+}
+['n','e','r','pt','q','dn','m','ok'].forEach(id=>$(id).addEventListener('input',gate));
+$('wa').onclick=()=>{if(ready())window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg())}`,'_blank')};
+$('mail').addEventListener('click',e=>{if(!ready())e.preventDefault()});
+gate();
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services & Pricing · Mohd Kaif Khan</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--midnight:#0A0C10;--graphite:#141720;--slate:#1E2230;--arctic:#7EC8E3;--mist:#8A9BB0;--white:#F0F4F8;--gold:#D4A843;--font-display:'Syne',sans-serif;--font-body:'Inter',sans-serif;--font-mono:'JetBrains Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--midnight);color:var(--white);font-family:var(--font-body);min-height:100vh;background-image:radial-gradient(600px 400px at 85% -5%,rgba(126,200,227,.12),transparent),radial-gradient(500px 400px at 0% 100%,rgba(212,168,67,.07),transparent)}
+a{color:inherit}
+header{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3rem;border-bottom:1px solid rgba(126,200,227,.1)}
+.logo{font-family:var(--font-display);font-weight:700;text-decoration:none}.logo span{color:var(--arctic)}
+.back{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);text-decoration:none}.back:hover{color:var(--arctic)}
+main{max-width:780px;margin:0 auto;padding:3.5rem 1.5rem 4rem}
+.eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--arctic);margin-bottom:.8rem}
+h1{font-family:var(--font-display);font-size:clamp(2rem,5vw,3rem);margin-bottom:1.5rem}
+.doc{background:rgba(30,34,48,.55);border:1px solid rgba(126,200,227,.12);border-radius:10px;padding:2rem;backdrop-filter:blur(14px);font-size:.92rem;line-height:1.8;color:rgba(240,244,248,.78)}
+.doc h4{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--arctic);margin:1.6rem 0 .4rem;font-weight:500}
+.doc h4:first-child{margin-top:0}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:1.6rem 3rem;border-top:1px solid rgba(126,200,227,.1);font-size:.78rem;color:var(--mist)}
+footer a{text-decoration:none;margin-left:1.2rem}footer a:hover{color:var(--arctic)}
+@media(max-width:700px){header,footer{padding:1.2rem 1.5rem}.doc{padding:1.4rem}footer a{margin:0 1rem 0 0}}
+main{max-width:980px}.doc a{color:var(--arctic)}.doc a.btn{display:inline-block;background:var(--arctic);color:var(--midnight);padding:.9rem 1.6rem;border-radius:3px;text-decoration:none;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin:1rem .6rem 0 0}.doc ul{margin:.4rem 0 .4rem 1.2rem}.tblw{overflow-x:auto}.tbl{width:100%;border-collapse:collapse;font-size:.9rem;margin:.6rem 0}.tbl th,.tbl td{padding:.8rem .7rem;border-bottom:1px solid rgba(240,244,248,.08);text-align:left;white-space:nowrap}.tbl th{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--arctic);font-weight:500}.tbl td:first-child{font-weight:500;color:var(--white)}footer.site-footer{display:block;padding:3rem 3rem 1.5rem;border-top:1px solid rgba(126,200,227,.12);background:rgba(10,12,16,.6);text-align:left;font-size:.85rem;color:var(--mist)}
+.sf-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1.1fr 1.3fr;gap:2rem}
+.sf-grid h5{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:.9rem;font-weight:500}
+.site-footer a{display:block;color:var(--mist);text-decoration:none;margin:0 0 .5rem;padding:0}.site-footer a:hover{color:var(--arctic)}
+.site-footer a.sf-logo{font-family:var(--font-display);font-weight:700;color:var(--white);font-size:1.1rem}.sf-logo span{color:var(--arctic)}
+.site-footer p{line-height:1.7;margin-top:.6rem;max-width:340px}.site-footer .sf-small{font-size:.74rem}.sf-loc{display:block;margin-top:.2rem}
+.sf-bottom{max-width:1100px;margin:2rem auto 0;padding-top:1.2rem;border-top:1px solid rgba(240,244,248,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-size:.76rem}
+@media(max-width:860px){footer.site-footer{padding:2rem 1.5rem 1.2rem}.sf-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.sf-grid{grid-template-columns:1fr}}
+.sh{gap:1rem;flex-wrap:wrap}.sh nav{display:flex;gap:1.3rem;align-items:center;flex-wrap:wrap}.sh nav a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);text-decoration:none}.sh nav a:hover{color:var(--arctic)}.sh nav a.cta{border:1px solid var(--arctic);color:var(--arctic);padding:.5rem 1rem;border-radius:2px}.sh nav a.cta:hover{background:var(--arctic);color:var(--midnight)}
+@media(max-width:700px){.sh{flex-direction:column;align-items:flex-start}.sh nav{gap:.9rem}}
+</style>
+</head>
+<body>
+<header class="sh"><a class="logo" href="index.html">Mohd Kaif Khan<span>.</span></a><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a><a href="support.html">Support</a><a class="cta" href="hire.html">Hire Me</a></nav></header>
+<main>
+  <div class="eyebrow">Services &amp; Pricing</div>
+  <h1>Services &amp; <em style="font-style:normal;color:var(--arctic)">Pricing</em></h1>
+  <div class="doc">
+   <p>HVAC design fees are charged per square foot of built-up area. All prices are in Indian Rupees (INR).</p>
+   <h4>Rates (₹ per sq ft)</h4>
+   <div class="tblw"><table class="tbl"><tr><th>Building type</th><th>Concept Design</th><th>Drawings Design</th><th>Detailed Design</th><th>Design + Site Visit</th></tr>
+   <tr><td>Residential</td><td>₹3</td><td>₹3</td><td>₹6</td><td>₹8</td></tr>
+   <tr><td>Commercial</td><td>₹5</td><td>₹5</td><td>₹10</td><td>₹12</td></tr>
+   <tr><td>Hospital</td><td>₹6</td><td>₹6</td><td>₹12</td><td>₹15</td></tr></table></div>
+   <p>Minimum project fee: ₹2,000 for residential and commercial projects. GST and other taxes are extra if applicable. The final fee is confirmed in writing after I review your drawings and requirements.</p>
+   <h4>What each service includes</h4>
+   <ul><li><b>Concept Design</b> — heat load summary and equipment selection · 2 revisions</li><li><b>Drawings Design</b> — HVAC layout drawing · 2 revisions</li><li><b>Detailed Design</b> — single-line HVAC scheme drawing, heat load calculations, equipment selection with drawings · 5 revisions</li><li><b>Design + Site Visit</b> — everything in Detailed Design plus 2 site visits within NCR · 5 revisions</li></ul>
+   <p>Additional revisions beyond those included may be charged separately. Site visits for Concept and Drawings Design are quoted on request.</p>
+   <h4>Payment stages</h4>
+   <ul><li><b>Concept Design and Drawings Design:</b> 50% advance, 50% on submission of the deliverable</li><li><b>Detailed Design and Design + Site Visit:</b> 20% advance, 30% after single-line HVAC scheme drawing submission, 40% after heat load calculations/equipment with drawings submission, 10% after final approval</li></ul>
+   <p>See the <a href="refund.html">Refund &amp; Cancellation Policy</a> and <a href="delivery.html">Service Delivery Policy</a> for details.</p>
+   <a class="btn" href="hire.html">Get an instant quote</a>
+  </div>
+</main>
+<footer class="site-footer">
+ <div class="sf-grid">
+  <div><a class="sf-logo" href="index.html">Mohd Kaif Khan<span>.</span></a>
+   <p>Freelance HVAC design consultancy: concept design, drawings, detailed design and site support for residential, commercial and hospital projects.</p>
+   <p class="sf-small">Business name: Mohd Kaif Khan — HVAC Design Consultant</p></div>
+  <div><h5>Company</h5><a href="about.html">About Us</a><a href="pricing.html">Services &amp; Pricing</a><a href="hire.html">Hire Me</a><a href="review.html">Write a Review</a></div>
+  <div><h5>Policies</h5><a href="terms.html">Terms &amp; Conditions</a><a href="privacy.html">Privacy Policy</a><a href="refund.html">Refund &amp; Cancellation Policy</a><a href="delivery.html">Service Delivery Policy</a></div>
+  <div><h5>Contact</h5><a href="contact.html">Contact Us</a><a href="support.html">Support</a><a href="mailto:mohdkaifkhan.w@gmail.com">mohdkaifkhan.w@gmail.com</a><a href="https://wa.me/918126690277" target="_blank" rel="noopener">+91 81266 90277 (WhatsApp)</a><span class="sf-loc">New Delhi, India</span></div>
+ </div>
+ <div class="sf-bottom"><span>© 2026 Mohd Kaif Khan. All rights reserved.</span><span>All prices are in Indian Rupees (INR).</span></div>
+</footer>
+</body>
+</html>

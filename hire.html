@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hire Me — HVAC Design Quote & Payment · Mohd Kaif Khan</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--midnight:#0A0C10;--graphite:#141720;--slate:#1E2230;--ice:#C8E6F5;--arctic:#7EC8E3;--flame:#FF5F1F;--mist:#8A9BB0;--white:#F0F4F8;--gold:#D4A843;
+--font-display:'Syne',sans-serif;--font-body:'Inter',sans-serif;--font-mono:'JetBrains Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--midnight);color:var(--white);font-family:var(--font-body);min-height:100vh;
+background-image:radial-gradient(600px 400px at 85% -5%,rgba(126,200,227,.12),transparent),radial-gradient(500px 400px at 0% 100%,rgba(212,168,67,.07),transparent)}
+a{color:inherit}
+header{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3rem;border-bottom:1px solid rgba(126,200,227,.1)}
+.logo{font-family:var(--font-display);font-weight:700;text-decoration:none}.logo span{color:var(--arctic)}
+.back{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);text-decoration:none}
+.back:hover{color:var(--arctic)}
+main{max-width:1080px;margin:0 auto;padding:3.5rem 1.5rem 5rem}
+.eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--arctic);margin-bottom:.8rem}
+h1{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin-bottom:.8rem}
+h1 em{font-style:normal;color:var(--arctic)}
+.lead{color:rgba(240,244,248,.5);max-width:560px;line-height:1.7;font-size:.95rem;margin-bottom:2.5rem}
+.grid{display:grid;grid-template-columns:1.4fr 1fr;gap:1.5rem;align-items:start}
+.panel{background:rgba(30,34,48,.55);border:1px solid rgba(126,200,227,.12);border-radius:10px;padding:1.6rem;backdrop-filter:blur(14px)}
+.panel+.panel{margin-top:1.2rem}
+h3{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);font-weight:500;margin-bottom:1rem}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.7rem}
+.opt{border:1px solid rgba(240,244,248,.12);border-radius:8px;padding:.9rem 1rem;cursor:pointer;background:transparent;color:var(--white);text-align:left;font-family:var(--font-body);transition:.2s}
+.opt b{display:block;font-size:.92rem;margin-bottom:.2rem}.opt small{color:var(--mist);font-size:.76rem;line-height:1.4;display:block}
+.opt:hover{border-color:var(--arctic)}
+.opt.on{border-color:var(--arctic);background:rgba(126,200,227,.1);box-shadow:0 0 0 1px var(--arctic) inset}
+.area{display:flex;gap:1rem;align-items:center}
+.area input[type=number]{width:140px}
+input[type=range]{flex:1;accent-color:var(--arctic)}
+input[type=number],input[type=text],input[type=email],input[type=tel]{width:100%;background:var(--graphite);border:1px solid rgba(240,244,248,.12);border-radius:6px;padding:.75rem .9rem;color:var(--white);font:inherit;font-size:.9rem}
+input:focus{outline:none;border-color:var(--arctic)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}.f2 .full{grid-column:1/-1}
+label{display:block;font-size:.74rem;color:var(--mist);margin-bottom:.3rem}
+.quote{position:sticky;top:1.5rem}
+.row{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px dashed rgba(240,244,248,.08);font-size:.88rem}
+.row span:first-child{color:var(--mist)}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin:1rem 0 .3rem}
+.total span:first-child{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--mist)}
+.total b{font-family:var(--font-display);font-size:2rem;color:var(--gold)}
+.adv{background:rgba(212,168,67,.08);border:1px solid rgba(212,168,67,.25);border-radius:8px;padding:.8rem 1rem;font-size:.85rem;display:flex;justify-content:space-between;margin:.8rem 0 1.2rem}
+.adv b{color:var(--gold)}
+.btn{width:100%;display:flex;justify-content:center;align-items:center;gap:.6rem;background:var(--arctic);color:var(--midnight);border:0;font-family:var(--font-mono);font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:1rem;border-radius:3px;cursor:pointer;text-decoration:none;transition:.2s;box-shadow:0 0 30px rgba(126,200,227,.2)}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--white);border:1px solid rgba(240,244,248,.18);box-shadow:none;margin-top:.7rem}
+.btn.ghost:hover{border-color:var(--arctic);color:var(--arctic)}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.note{font-size:.74rem;color:var(--mist);line-height:1.6;margin-top:1rem}
+#pay{display:none}
+#pay.show{display:block}
+.ref{font-family:var(--font-mono);color:var(--arctic);font-size:.85rem}
+#qr{background:#fff;padding:10px;border-radius:8px;width:fit-content;margin:1rem auto 0}
+.hide{display:none!important}
+.agree{display:flex;gap:.7rem;align-items:flex-start;margin-top:1.4rem;font-size:.85rem;line-height:1.5;color:rgba(240,244,248,.75);cursor:pointer}
+.agree input{margin-top:.2rem;accent-color:var(--arctic);width:16px;height:16px;flex:none}
+.agree a,.tlink{color:var(--arctic);cursor:pointer;text-decoration:underline;background:none;border:0;font:inherit}
+input.bad{border-color:var(--flame)}
+#gateHint{color:var(--flame);margin-top:1rem}
+.locked .btn{opacity:.35;pointer-events:none}.locked #qr{filter:blur(6px);opacity:.5}
+.mb{position:fixed;inset:0;background:rgba(10,12,16,.8);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:1.2rem;z-index:50}
+.mb.open{display:flex}
+.modal{background:var(--graphite);border:1px solid rgba(126,200,227,.2);border-radius:10px;max-width:700px;width:100%;max-height:85vh;display:flex;flex-direction:column}
+.mh{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 1.5rem;border-bottom:1px solid rgba(240,244,248,.08)}
+.mh b{font-family:var(--font-display);font-size:1.2rem}.mh button{background:none;border:0;color:var(--mist);font-size:1.2rem;cursor:pointer}
+.mbody{overflow:auto;padding:1.2rem 1.5rem 1.6rem;font-size:.86rem;line-height:1.7;color:rgba(240,244,248,.75)}
+.mbody h4{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--arctic);margin:1.2rem 0 .3rem;font-weight:500}
+.mbody h4:first-child{margin-top:0}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:1.6rem 3rem;border-top:1px solid rgba(126,200,227,.1);font-size:.78rem;color:var(--mist)}footer a{text-decoration:none;margin-left:1.2rem}footer a:hover{color:var(--arctic)}
+@media(max-width:860px){footer{padding:1.2rem 1.5rem}footer a{margin:0 1rem 0 0}header{padding:1.2rem 1.5rem}.grid{grid-template-columns:1fr}.quote{position:static}.f2{grid-template-columns:1fr}}
+footer.site-footer{display:block;padding:3rem 3rem 1.5rem;border-top:1px solid rgba(126,200,227,.12);background:rgba(10,12,16,.6);text-align:left;font-size:.85rem;color:var(--mist)}
+.sf-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1.1fr 1.3fr;gap:2rem}
+.sf-grid h5{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white);margin-bottom:.9rem;font-weight:500}
+.site-footer a{display:block;color:var(--mist);text-decoration:none;margin:0 0 .5rem;padding:0}.site-footer a:hover{color:var(--arctic)}
+.site-footer a.sf-logo{font-family:var(--font-display);font-weight:700;color:var(--white);font-size:1.1rem}.sf-logo span{color:var(--arctic)}
+.site-footer p{line-height:1.7;margin-top:.6rem;max-width:340px}.site-footer .sf-small{font-size:.74rem}.sf-loc{display:block;margin-top:.2rem}
+.sf-bottom{max-width:1100px;margin:2rem auto 0;padding-top:1.2rem;border-top:1px solid rgba(240,244,248,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-size:.76rem}
+@media(max-width:860px){footer.site-footer{padding:2rem 1.5rem 1.2rem}.sf-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.sf-grid{grid-template-columns:1fr}}
+.sh{gap:1rem;flex-wrap:wrap}.sh nav{display:flex;gap:1.3rem;align-items:center;flex-wrap:wrap}.sh nav a{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);text-decoration:none}.sh nav a:hover{color:var(--arctic)}.sh nav a.cta{border:1px solid var(--arctic);color:var(--arctic);padding:.5rem 1rem;border-radius:2px}.sh nav a.cta:hover{background:var(--arctic);color:var(--midnight)}
+@media(max-width:700px){.sh{flex-direction:column;align-items:flex-start}.sh nav{gap:.9rem}}
+</style>
+</head>
+<body>
+<header class="sh"><a class="logo" href="index.html">Mohd Kaif Khan<span>.</span></a><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a><a href="support.html">Support</a><a class="cta" href="hire.html">Hire Me</a></nav></header>
+
+<main>
+  <div class="eyebrow">Hire Me · HVAC Design</div>
+  <h1>Get your <em>instant quote</em><br>and start your project</h1>
+  <p class="lead">Choose your building type and project size to see the design fee right away. Pay the advance online to lock in your slot — I'll confirm within 24 hours.</p>
+
+  <div class="grid">
+    <div>
+      <div class="panel">
+        <h3>1 · Building type</h3>
+        <div class="opts" id="types"></div>
+      </div>
+      <div class="panel">
+        <h3>2 · Project size (built-up area)</h3>
+        <div class="area">
+          <input type="number" id="areaNum" min="100" step="50" value="5000">
+          <span style="color:var(--mist);font-size:.85rem">sq ft</span>
+          <input type="range" id="areaRange" min="500" max="50000" step="250" value="5000">
+        </div>
+      </div>
+      <div class="panel">
+        <h3>3 · Scope of work</h3>
+        <div class="opts" id="scopes"></div>
+      </div>
+    </div>
+
+    <aside class="panel quote">
+      <h3>Your quote</h3>
+      <div class="row"><span>Building</span><b id="qType">—</b></div>
+      <div class="row"><span>Area</span><b id="qArea">—</b></div>
+      <div class="row"><span>Rate</span><b id="qRate">—</b></div>
+      <div class="row"><span>Scope</span><b id="qScope">—</b></div>
+      <div class="row hide" id="siteRow"><span>Site visit</span><b>Quote on request</b></div>
+      <div class="row hide" id="gstRow"><span>GST</span><b id="qGst">—</b></div>
+      <div class="total"><span>Total fee</span><b id="qTotal">—</b></div>
+      <div class="adv"><span id="advLabel">Advance to start</span><b id="qAdv">—</b></div>
+
+      <h3 style="margin-top:.4rem">Payment schedule</h3>
+      <div id="sched" style="margin-bottom:1.2rem"></div>
+
+      <button class="btn" id="goBtn">Continue to hire &amp; pay →</button>
+      <p class="note">By continuing you agree to the <a class="tlink" href="terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a> and <a class="tlink" href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.<br>Additional revisions beyond those included may be charged separately. Quote is an estimate based on area and building type. Final fee is confirmed after reviewing drawings/requirements.</p>
+    </aside>
+  </div>
+
+  <div class="panel" id="pay" style="margin-top:1.5rem">
+    <h3>4 · Your details &amp; payment</h3>
+    <div class="f2">
+      <div><label>Your name *</label><input type="text" id="cName" required autocomplete="name"></div>
+      <div><label>Email *</label><input type="email" id="cEmail" required autocomplete="email"></div>
+      <div><label>Phone / WhatsApp *</label><input type="tel" id="cPhone" required autocomplete="tel"></div>
+      <div><label>Project name / location *</label><input type="text" id="cProj" required></div>
+    </div>
+    <p class="note">Quote reference: <span class="ref" id="refId"></span> · Advance due: <b id="payAmt" style="color:var(--gold)"></b></p>
+
+    <p class="note" id="gateHint"></p>
+    <label class="agree hide" id="siteWrap"><input type="checkbox" id="siteReq"><span>Also send me a quote for a site visit (quoted separately, no obligation).</span></label>
+    <label class="agree"><input type="checkbox" id="agree"><span>I have read and agree to the <a class="tlink" href="terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a> and <a class="tlink" href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span></label>
+    <div style="max-width:420px;margin-top:1.2rem" id="payBtns" class="locked">
+      <button class="btn hide" id="linkBtn">Pay advance online (Card / UPI / Netbanking)</button>
+      <a class="btn hide" id="upiBtn" href="#">Pay with UPI app</a>
+      <div id="qr" class="hide"></div>
+      <p class="note hide" id="upiNote" style="text-align:center;margin-top:.6rem">On a phone, tap the button. On desktop, scan the QR with any UPI app.<br>UPI ID: <b class="ref" id="upiIdTxt"></b></p>
+      <button class="btn ghost" id="sendBtn">Send my quote to Kaif on WhatsApp</button>
+      <a class="btn ghost" id="mailBtn" href="#">Send my quote by email</a>
+    </div>
+    <p class="note">Payment problem or question? <a class="tlink" href="support.html" target="_blank" rel="noopener">Get support</a> (keep your quote reference handy).</p>
+    <p class="note">After paying, send the payment screenshot / reference on WhatsApp or email quoting your quote reference so I can confirm and kick off your project.</p>
+  </div>
+</main>
+
+
+<footer class="site-footer">
+ <div class="sf-grid">
+  <div><a class="sf-logo" href="index.html">Mohd Kaif Khan<span>.</span></a>
+   <p>Freelance HVAC design consultancy: concept design, drawings, detailed design and site support for residential, commercial and hospital projects.</p>
+   <p class="sf-small">Business name: Mohd Kaif Khan — HVAC Design Consultant</p></div>
+  <div><h5>Company</h5><a href="about.html">About Us</a><a href="pricing.html">Services &amp; Pricing</a><a href="hire.html">Hire Me</a><a href="review.html">Write a Review</a></div>
+  <div><h5>Policies</h5><a href="terms.html">Terms &amp; Conditions</a><a href="privacy.html">Privacy Policy</a><a href="refund.html">Refund &amp; Cancellation Policy</a><a href="delivery.html">Service Delivery Policy</a></div>
+  <div><h5>Contact</h5><a href="contact.html">Contact Us</a><a href="support.html">Support</a><a href="mailto:mohdkaifkhan.w@gmail.com">mohdkaifkhan.w@gmail.com</a><a href="https://wa.me/918126690277" target="_blank" rel="noopener">+91 81266 90277 (WhatsApp)</a><span class="sf-loc">New Delhi, India</span></div>
+ </div>
+ <div class="sf-bottom"><span>© 2026 Mohd Kaif Khan. All rights reserved.</span><span>All prices are in Indian Rupees (INR).</span></div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+/* =====================  EDIT THIS BLOCK  ===================== */
+const CONFIG = {
+  email: 'mohdkaifkhan.w@gmail.com',
+  whatsapp: '918126690277',      // country code + number, no + or spaces
+  upiId: 'nyxo@ptyes',                   // e.g. 'yourname@okhdfcbank'  → enables UPI app button + QR
+  paymentLink: '',               // Razorpay / Cashfree / Instamojo payment link → enables online card/UPI/netbanking button
+  payeeName: 'Mohd Kaif Khan',
+  gstPct: 0,                     // set 18 once GST-registered; 0 hides the GST line
+  minFee: { residential: 2000, commercial: 2000, hospital: 0 }   // minimum project fee in INR by building type (0 = none)
+};
+
+/* Rates in INR per sq ft of built-up area: RATES[buildingType][scope] */
+const RATES = {
+  residential: { concept: 3, drawings: 3, detailed: 6,  full: 8 },
+  commercial:  { concept: 5, drawings: 5, detailed: 10, full: 12 },
+  hospital:    { concept: 6, drawings: 6, detailed: 12, full: 15 }
+};
+const TYPES = {
+  residential: { name: 'Residential', desc: 'Villas, apartments, farmhouses' },
+  commercial:  { name: 'Commercial',  desc: 'Offices, retail, restaurants' },
+  hospital:    { name: 'Hospital',    desc: 'Hospitals, clinics, labs, OT' }
+};
+/* Payment stages per scope (% of total fee). siteQuote:true shows the "request site visit quote" option. */
+const S2A = [{ pct: 50, label: 'Advance — to start work' }];
+const DET = [
+  { pct: 20, label: 'Advance — to start work' },
+  { pct: 30, label: 'After single-line HVAC scheme drawing submission' },
+  { pct: 40, label: 'After heat load calculations / equipment with drawings submission' },
+  { pct: 10, label: 'After final approval of drawings & calculations' }
+];
+const SCOPES = {
+  concept:  { name: 'Concept Design',     desc: 'Heat load summary & equipment selection · 2 revisions', siteQuote: true,
+              stages: [...S2A, { pct: 50, label: 'After load summary / equipment selection submission' }] },
+  drawings: { name: 'Drawings Design',    desc: 'HVAC layout drawing · 2 revisions', siteQuote: true,
+              stages: [...S2A, { pct: 50, label: 'After HVAC layout drawing submission' }] },
+  detailed: { name: 'Detailed Design',    desc: 'Single-line scheme, heat load calcs, equipment & drawings · 5 revisions', stages: DET },
+  full:     { name: 'Design + Site Visit', desc: 'Everything in Detailed Design + 2 site visits', stages: DET }
+};
+/* ============================================================= */
+
+const $ = id => document.getElementById(id);
+const inr = n => '₹' + Math.round(n).toLocaleString('en-IN');
+let type = 'commercial', scope = 'detailed', area = 5000, quote = null;
+
+function mkOpts(el, data, key, cb) {
+  el.innerHTML = '';
+  Object.entries(data).forEach(([k, v]) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'opt'; b.dataset.k = k;
+    b.innerHTML = `<b>${v.name}</b><small>${v.desc}</small>`;
+    b.onclick = () => { cb(k); mark(el, k); calc(); };
+    el.appendChild(b);
+  });
+  mark(el, key);
+}
+function mark(el, k) { el.querySelectorAll('.opt').forEach(o => o.classList.toggle('on', o.dataset.k === k)); }
+
+function calc() {
+  const st = SCOPES[scope].stages;
+  const rate = RATES[type][scope];
+  const raw = area * rate, minFee = CONFIG.minFee[type] || 0;
+  const base = Math.max(minFee, raw);
+  const gst = base * CONFIG.gstPct / 100;
+  const total = base + gst;
+  let used = 0;
+  const parts = st.map((m, i) => {
+    const amt = i === st.length - 1 ? total - used : Math.round(total * m.pct / 100);
+    used += amt;
+    return { ...m, amt };
+  });
+  const adv = parts[0].amt;
+  quote = { total, adv, rate, gst, parts };
+  $('qType').textContent = TYPES[type].name;
+  $('qArea').textContent = area.toLocaleString('en-IN') + ' sq ft';
+  $('qRate').textContent = inr(rate) + ' / sq ft' + (raw < minFee ? ' · min. fee applied' : '');
+  $('qScope').textContent = SCOPES[scope].name;
+  $('gstRow').classList.toggle('hide', !CONFIG.gstPct);
+  $('qGst').textContent = inr(gst) + ` (${CONFIG.gstPct}%)`;
+  $('qTotal').textContent = inr(total);
+  $('advLabel').textContent = `Advance to start (${st[0].pct}%)`;
+  $('qAdv').textContent = inr(adv);
+  $('sched').innerHTML = parts.map(m => `<div class="row"><span>${m.pct}% · ${m.label}</span><b>${inr(m.amt)}</b></div>`).join('');
+  const sq = !!SCOPES[scope].siteQuote;
+  $('siteRow').classList.toggle('hide', !sq);
+  $('siteWrap').classList.toggle('hide', !sq);
+  if (!sq) $('siteReq').checked = false;
+  if ($('pay').classList.contains('show')) buildPay();
+}
+
+function setArea(v) {
+  area = Math.max(100, Math.round(+v) || 100);
+  $('areaNum').value = area;
+  $('areaRange').value = Math.min(area, 50000);
+  calc();
+}
+$('areaNum').oninput = e => { area = Math.max(100, Math.round(+e.target.value) || 100); $('areaRange').value = Math.min(area, 50000); calc(); };
+$('areaRange').oninput = e => setArea(e.target.value);
+
+let ref = '';
+function summary() {
+  const c = { n: $('cName').value.trim(), e: $('cEmail').value.trim(), p: $('cPhone').value.trim(), j: $('cProj').value.trim() };
+  const sched = quote.parts.map(m => `${m.pct}% ${inr(m.amt)} (${m.label})`).join('\n- ');
+  const site = SCOPES[scope].siteQuote && $('siteReq').checked ? '\nSite visit quote requested: Yes' : '';
+  return `Hi Kaif, I'd like to hire you for HVAC design.\n\nQuote ref: ${ref}\nBuilding: ${TYPES[type].name}\nBuilt-up area: ${area.toLocaleString('en-IN')} sq ft\nScope: ${SCOPES[scope].name}\nTotal fee: ${inr(quote.total)}\nPayment stages:\n- ${sched}${site}\nTerms & Privacy Policy (v1.0): ${$('agree').checked ? 'accepted' : 'not yet accepted'}\n\nName: ${c.n}\nEmail: ${c.e}\nPhone: ${c.p}\nProject: ${c.j}`;
+}
+function buildPay() {
+  if (!ref) ref = 'KK-' + new Date().toISOString().slice(2, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
+  $('refId').textContent = ref;
+  $('payAmt').textContent = inr(quote.adv);
+  const msg = summary();
+  $('mailBtn').href = `mailto:${CONFIG.email}?subject=${encodeURIComponent('HVAC design project — ' + ref)}&body=${encodeURIComponent(msg)}`;
+  $('sendBtn').onclick = () => { if (ready()) window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank'); };
+
+  $('linkBtn').classList.toggle('hide', !CONFIG.paymentLink);
+  $('linkBtn').onclick = () => { if (ready()) window.open(CONFIG.paymentLink, '_blank'); };
+
+  const hasUpi = !!CONFIG.upiId;
+  $('upiBtn').classList.toggle('hide', !hasUpi);
+  $('upiNote').classList.toggle('hide', !hasUpi);
+  $('upiIdTxt').textContent = CONFIG.upiId;
+  $('upiBtn').textContent = `Pay ${inr(quote.adv)} (${SCOPES[scope].stages[0].pct}% advance) via UPI`;
+  $('qr').classList.toggle('hide', !hasUpi);
+  if (hasUpi) {
+    const upi = `upi://pay?pa=${encodeURIComponent(CONFIG.upiId)}&pn=${encodeURIComponent(CONFIG.payeeName)}&am=${Math.round(quote.adv)}&cu=INR&tn=${encodeURIComponent(ref)}`;
+    $('upiBtn').href = upi;
+    $('qr').innerHTML = '';
+    if (window.QRCode) new QRCode($('qr'), { text: upi, width: 160, height: 160 });
+  }
+}
+$('goBtn').onclick = () => {
+  $('pay').classList.add('show');
+  buildPay();
+  updateGate(false);
+  $('pay').scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
+
+$('siteReq').onchange=()=>{if(ref)buildPay()};
+const F = { cName: 'name', cEmail: 'a valid email', cPhone: 'a valid phone number', cProj: 'project name / location' };
+const okField = id => {
+  const v = $(id).value.trim();
+  if (id === 'cEmail') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  if (id === 'cPhone') return v.replace(/\D/g, '').length >= 10;
+  return v.length >= 2;
+};
+const ready = () => Object.keys(F).every(okField) && $('agree').checked;
+function updateGate(touched) {
+  const missing = Object.keys(F).filter(id => !okField(id));
+  if (touched) Object.keys(F).forEach(id => $(id).classList.toggle('bad', !okField(id) && $(id).value !== ''));
+  $('payBtns').classList.toggle('locked', !ready());
+  $('gateHint').textContent = ready() ? '' :
+    missing.length ? 'Please enter ' + missing.map(id => F[id]).join(', ') + (!$('agree').checked ? ' and accept the terms' : '') + ' to continue.' :
+    'Please accept the Terms & Conditions and Privacy Policy to continue.';
+  if (ref) buildPay();
+}
+$('agree').onchange = () => updateGate(true);
+['cName', 'cEmail', 'cPhone', 'cProj'].forEach(id => $(id).addEventListener('input', () => updateGate(true)));
+['upiBtn', 'mailBtn'].forEach(id => $(id).addEventListener('click', e => { if (!ready()) e.preventDefault(); }));
+
+mkOpts($('types'), TYPES, type, k => type = k);
+mkOpts($('scopes'), SCOPES, scope, k => scope = k);
+calc();
+</script>
+</body>
+</html>
